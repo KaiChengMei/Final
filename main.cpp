@@ -19,14 +19,17 @@ void coffeeaddqueue(Customernode head, string name, string coffeeorder) {
     temp->next = newnode;
 }
 
-void servecoffee(Customernode head, string name, string coffeeorder) {
+void servecoffee(Customernode head) {
+    // print the person served
+    cout <<
+
     if (head) {
         head = head->next;
     } else {
         cout << "There is no one Coffe booth " << endl;
     }
-
-void simulationcoffee() {
+}
+void joincoffee(Customernode head, string name, string coffeeorder) {
 
 } 
 
@@ -35,7 +38,15 @@ int main() {
     Customernode* cofffeeQ;
 
     for ( i = 0; i < 3; i++) {
+        cout << "Initial move: "
         addqueue(cofffeeQ, name[rand % 10], coffeeorder[rand % 4]);
     }
+
+    for ( j = 0; j < 10; j++) {
+        cout << "Time: " << i+1 << "CoffeeBooth" << endl;
+        servecoffee(cofffeeQ);
+        if (rand % 2 == 0) {
+            joincoffee(cofffeeQ, name[rand % 10], coffeeorder[rand % 4]);
+        } 
 
 }
