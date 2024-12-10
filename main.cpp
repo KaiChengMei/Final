@@ -97,15 +97,34 @@ void printmuffin(const deque<Customer> queue) {
         cout << "Empty";
         return;
     }
-    for ()
+    for (auto custoemer : queue) {
+        cout << customer.name << "(" << customer.order << ") -";
+    }
+    cout << endl;
 }
 
 void printbracelet(const vector<Customer> queue) {
-    
+    cout << "bracelet booth: ";
+    if (queue.empty()) {
+        cout << "Empty";
+        return;
+    }
+    for (const auto customer : queue) {
+        cout << customer.name << "(" << customer.order << ") ";
+    }
+    cout << endl;
 }
 
 void printicecream(const queue<Customer> queue) {
-    
+    cout << "ice cream booth: ";
+    if (queue.empty()) {
+        cout << "Empty";
+        return;
+    }
+    for (const auto customer : queue) {
+        cout << customer.name << "(" << customer.order << ") ";
+    }
+    cout << endl;
 }
 
 
@@ -181,7 +200,7 @@ int main() {
         // print 
         printicecream(icecreamQ);
 
-        cout << endl;
+        cout << "~~~~~~~~~~~~~~~~~~~~" << endl;
     }
 
     return 0;
