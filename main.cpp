@@ -2,19 +2,31 @@
 #include <string>
 using namespace std;
 
-void addqueue() {
-
-}
-
-int main() {
-    struct custumor {
+struct custumor {
         string name;
         string order;
         Customernode* next;
     }
 
+// 10 name
+string name[] = {"Frank","Alex","Kai","Kenny","Zoe","Stanley","Timothy","Renee","Nina","Jinx"}
+string coffeeorder[] = {"Latte","Expresso","Mocha","Water"}
+
+void coffeeaddqueue(Customernode head, string name) {
+
+}
+
+
+void simulationcoffee() {
+
+} 
+
+int main() {
+
+    Customernode* cofffeeQ;
+
     for ( i = 0; i < 3; i++) {
-        addqueue();
+        addqueue(cofffeeQ, name[rand % 10]);
     }
 
 }
