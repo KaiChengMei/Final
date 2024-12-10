@@ -71,11 +71,43 @@ void servebracelet(vector<Customer> queue) {
 void serveicecream(queue<Customer> queue) {
     if (!queue.empty()) {
         cout << "Ice cream Serving: " << queue.front().name << " with flavor: " << queue.front().order << endl;
-        queue.pop_front();
+        queue.pop();
     } else {
         cout << "*Empty ice cream booth " << endl;
     }
 }
+
+// print 
+void printcoffee(const Customernode* head) {
+    cout << "Coffee booth: ";
+    if (head) {
+        cout << "Empty";
+        return;
+    }
+    while (head) {
+        cout << head->name << "(" << head->order << ") -";
+        head = head->next;
+    }
+    cout << endl;
+}
+
+void printmuffin(const deque<Customer> queue) {
+    cout << "muffin booth: ";
+    if (!queue.empty()) {
+        cout << "Empty";
+        return;
+    }
+    for ()
+}
+
+void printbracelet(const vector<Customer> queue) {
+    
+}
+
+void printicecream(const queue<Customer> queue) {
+    
+}
+
 
 int main() {
 
@@ -86,12 +118,12 @@ int main() {
     vector<Customer> braceletQ;
     queue<Customer> icecreamQ;
 
-    cout << "Initial move ";
+    cout << "Initial move done";
     for ( int i = 0; i < 3; i++) {
         coffeeaddqueue(cofffeeQ, names[rand() % 10], coffeeorder[rand() % 4]);
         muffinQ.push_back({names[rand() % 10], muffinorder[rand() % 4]});
         braceletQ.push_back({names[rand() % 10], braceletorder[rand() % 4]});
-        icecreamQ.push_back({names[rand() % 10], icecreamorder[rand() % 4]});
+        icecreamQ.push({names[rand() % 10], icecreamorder[rand() % 4]});
     }
     cout << endl;
 
@@ -109,6 +141,9 @@ int main() {
             cout << "New coffee order: " << tempname << "(" << temporder << ")" << endl;
             coffeeaddqueue(cofffeeQ, tempname, temporder);
         } 
+        // print 
+        printcoffee(cofffeeQ);
+
 
         // MuffinBooth
         cout << "----MuffinBooth----" << endl;
@@ -119,6 +154,8 @@ int main() {
             cout << "New muffin order: " << tempname << "(" << temporder << ")" << endl;
             muffinQ.push_back({tempname,temporder});
         } 
+        // print 
+        printmuffin(muffinQ);
 
         // BraceletBooth
         cout << "----BraceletBooth----" << endl;
@@ -129,6 +166,8 @@ int main() {
             cout << "New bracelet order: " << tempname << "(" << temporder << ")" << endl;
             braceletQ.push_back({tempname, temporder});
         } 
+        // print 
+        printbracelet(braceletQ);
 
         // IcecreamBooth
         cout << "----IcecreamBooth----" << endl;
@@ -137,8 +176,10 @@ int main() {
             tempname = names[rand() % 10];
             temporder = icecreamorder[rand() % 4];
             cout << "New ice cream order: " << tempname << "(" << temporder << ")" << endl;
-            icecreamQ.push_back({tempname, temporder});
+            icecreamQ.push({tempname, temporder});
         } 
+        // print 
+        printicecream(icecreamQ);
 
         cout << endl;
     }
