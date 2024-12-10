@@ -79,50 +79,51 @@ void serveicecream(queue<Customer> queue) {
 
 // print 
 void printcoffee(const Customernode* head) {
-    cout << "Coffee booth: ";
-    if (head) {
-        cout << "Empty";
+    cout << "->" << "Coffee booth: ";
+    if (!head) {
+        cout << "Empty" << endl;
         return;
     }
     while (head) {
-        cout << head->name << "(" << head->order << ") -";
+        cout << head->name << "(" << head->order << ") ";
         head = head->next;
     }
     cout << endl;
 }
 
-void printmuffin(const deque<Customer> queue) {
-    cout << "muffin booth: ";
-    if (!queue.empty()) {
-        cout << "Empty";
-        return;
-    }
-    for (auto custoemer : queue) {
-        cout << customer.name << "(" << customer.order << ") -";
-    }
-    cout << endl;
-}
-
-void printbracelet(const vector<Customer> queue) {
-    cout << "bracelet booth: ";
+void printmuffin(const deque<Customer>& queue) {
+    cout << "->" << "muffin booth: ";
     if (queue.empty()) {
-        cout << "Empty";
+        cout << "Empty" << endl;
         return;
     }
-    for (const auto customer : queue) {
+    for (const auto& customer : queue) {
         cout << customer.name << "(" << customer.order << ") ";
     }
     cout << endl;
 }
 
-void printicecream(const queue<Customer> queue) {
-    cout << "ice cream booth: ";
+void printbracelet(const vector<Customer>& queue) {
+    cout << "->" << "bracelet booth: ";
     if (queue.empty()) {
-        cout << "Empty";
+        cout << "Empty" << endl;
         return;
     }
-    for (const auto customer : queue) {
+    for (const auto& customer : queue) {
         cout << customer.name << "(" << customer.order << ") ";
+    }
+    cout << endl;
+}
+
+void printicecream(queue<Customer> queue) {
+    cout << "->" << "ice cream booth: ";
+    if (queue.empty()) {
+        cout << "Empty" << endl;
+        return;
+    }
+    while (!queue.empty()) {
+        cout << queue.front().name << "(" << queue.front().order << ") ";
+        queue.pop();
     }
     cout << endl;
 }
@@ -152,7 +153,7 @@ int main() {
         cout << "Time: " << j+1 << endl;
 
         // CoffeeBooth
-        cout << "----CoffeeBooth----" << endl;
+        cout << "----CoffeeBooth activity ----" << endl;
         servecoffee(cofffeeQ);
         if (rand() % 2 == 0) {
             tempname = names[rand() % 10];
@@ -165,7 +166,7 @@ int main() {
 
 
         // MuffinBooth
-        cout << "----MuffinBooth----" << endl;
+        cout << "----MuffinBooth activity ----" << endl;
         servemuffin(muffinQ);
         if (rand() % 2 == 0) {
             tempname = names[rand() % 10];
@@ -177,7 +178,7 @@ int main() {
         printmuffin(muffinQ);
 
         // BraceletBooth
-        cout << "----BraceletBooth----" << endl;
+        cout << "----BraceletBooth activity ----" << endl;
         servebracelet(braceletQ);
         if (rand() % 2 == 0) {
             tempname = names[rand() % 10];
@@ -189,7 +190,7 @@ int main() {
         printbracelet(braceletQ);
 
         // IcecreamBooth
-        cout << "----IcecreamBooth----" << endl;
+        cout << "----IcecreamBooth activity ----" << endl;
         serveicecream(icecreamQ);
         if (rand() % 2 == 0) {
             tempname = names[rand() % 10];
